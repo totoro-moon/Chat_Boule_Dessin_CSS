@@ -1,0 +1,264 @@
+body{
+    background: radial-gradient(circle, #aaddf5, #6f90a0);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    margin:0;
+}
+// display flexbox pour centrer les elements du dessin contenu dans le container
+.container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top:-5%;
+}
+//..........tête..........//
+// la tête du personnage (position: relative afin de pouvoir appliquer les éléments enfants (en position absolu ) 
+// de maniére a ce qu'ils s'aplliquent de maniére relavive à l'élément parent
+// /taille et border-radius 5O% pour transformer en cercle 
+// couleur et boxshadow: pour détaché l'élément du fond/ flexbox pour la disposition des element enfant.
+.head{
+    position: relative;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    // border: 2px solid rgb(107, 106, 106);
+    background: rgb(190, 189, 189);
+    box-shadow:  6px 8px 15px 2px rgb(78, 78, 78);
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+} 
+//  ::before sera inséré à l'interieur et aussi en premier dans l'ordre des elements
+// content:"" pour appliquer sur l'element en question.
+// position : absolute les éléments sont retiré du flux normal et sont donc positionné par rapport à son element parent. Ce qui crée un contexte d'empilement.
+// box-shadow: inset pour crée l'ombre à l'interieur de l'élément
+.head::before{
+    content:"";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    box-shadow: inset  -22px 5px 30px 15px rgb(107, 106, 106);
+}
+//..........les yeux..........//
+// background radial-gradiant circle pour le decradé
+.eye{
+    position: absolute;
+    background: radial-gradient(circle, #424242,  #020202);
+    border-radius: 50%;
+    width: 60px;
+    height: 50px;
+    top: 120px;
+}
+// ombre interieur de l'oeil
+.eye::before{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: inset -3px 3px 5px 3px rgba(253, 251, 251, 0.2);
+}
+// position de l'oeil gauche par rapport au centre
+.left{
+    margin-left: -150px;
+}
+// position de l'oeil droit par rapport au centre
+.right{
+    margin-left: 150px;
+}
+// pupiles de des yeux
+//  ::after sera inséré à l'interieur et aussi en dernier dans l'ordre des elements.
+.eye::after{
+    content: "";
+    position: absolute;
+    width: 36px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgb(247, 223, 8);
+    top: 3px;
+    right: 12px;
+    box-shadow: inset -5px 3px 3px 3px rgba(240, 157, 33, 0.8);
+    // box-shadow: inset 3px 3px 5px 3px rgba(240, 157, 33, 0.8);
+}
+.pupil{
+    position: absolute;
+    width: 8px;
+    height: 38px;
+    border-radius: 50%;
+    background: black;
+    top: 125px;
+}
+.left-pupil{
+    margin-left: -150px;
+}
+.right-pupil{
+    margin-left: 150px;
+}
+//.........oreille........./// 
+.hear{
+position: absolute;
+    width: 100px;
+    height: 80px;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background: rgb(190, 189, 189);
+    top: -30px;
+}
+.hear::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    box-shadow: inset  -22px 5px 40px 15px rgb(107, 106, 106);
+}
+.hear::after{
+    content: "";
+    position: absolute;
+    top: 50px;
+    width: 90px;
+    height: 90px;
+     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    box-shadow: inset  -22px 5px 40px 15px rgb(224, 221, 221);
+}
+// rotation de l'oreille droite
+.right-hear{
+    margin-left: 250px;
+    transform: rotate(38deg);
+} 
+// rotation de l'oreille gauche
+.left-hear{
+    margin-left: -250px;
+    transform: rotate(-38deg);
+}
+//.........bouche.........//
+.lips{
+    position: absolute;
+    background: radial-gradient(circle,  rgb(214, 214, 214),  rgb(145, 143, 143));
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    top: 230px;
+}
+.right-lips{
+    margin-left: 52px;
+}
+.left-lips{
+    margin-left: -52px;
+}
+.lips::after{
+        content: "";
+    position: absolute;
+    clip-path: polygon(51% 60%, 31% 0, 73% 0);
+    width: 40px;
+    height: 40px;
+    top: 59px;
+    left: 8px;
+    background: rgb(248, 239, 225);
+}
+//.........nez........//
+.nose-solid.heart {
+    position: absolute;
+    color: #ad6d93;
+    top: 230px;
+    margin-top: 6px;
+    width: 30px;
+    height: 30px;
+    border-left: solid 1px currentColor;
+    border-bottom: solid 1px currentColor;
+    background-color: currentColor;
+    -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+}
+.nose-solid.heart:before {
+    content: '';
+    position: absolute;
+    top: -13px;
+    left: -1px;
+    width: 29px;
+    height: 15px;
+    border-radius: 20px 20px 0 0;
+    border-top: solid 1px currentColor;
+    border-left: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    background-color: currentColor;
+}
+.nose-solid.heart:after {
+    content: '';
+    position: absolute;
+    top: Opx;
+    left: 27px;
+    width: 15px;
+    height: 29px;
+    border-radius: 0 20px 20px 0;
+    border-top: solid 1px currentColor;
+    border-right: solid 1px currentColor;
+    border-bottom: solid 1px currentColor;
+    background-color: currentColor;
+}
+// ........moustache......//
+// moustache de gauche
+.mustache-left {
+    color: rgb(109, 107, 107);
+    position: absolute;
+    margin-left: -120px;
+    top: 255px;
+    width: 67px;
+    height: 1px;
+    background-color: currentColor;
+}
+.mustache-left:before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 67px;
+    height: 1px;
+    transform: rotate(20deg);
+    background-color: currentColor;
+}
+.mustache-left:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    width: 67px;
+    height: 1px;
+    transform: rotate(-20deg);
+    background-color: currentColor;
+}
+// moustache de droite
+.mustache-right {
+    color: rgb(109, 107, 107);
+    position: absolute;
+    margin-left: 120px;
+    top: 255px;
+    width: 67px;
+    height: 1px;
+    background-color: currentColor;
+}
+.mustache-right:before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 67px;
+    height: 1px;
+    transform: rotate(-20deg);
+    background-color: currentColor;
+}
+.mustache-right:after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    width: 67px;
+    height: 1px;
+    transform: rotate(20deg);
+    background-color: currentColor;
+}
+// ........colier......//
+// .collar{
+//     position: absolute;
+//     width: 180px;
+//     height: 40px; 
+//     background: brown;
+//     top: 325px;
+// }
+

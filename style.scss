@@ -34,7 +34,7 @@ body{
 // position : absolute les éléments sont retiré du flux normal et sont donc positionné par rapport à son element parent. Ce qui crée un contexte d'empilement.
 // box-shadow: inset pour crée l'ombre à l'interieur de l'élément
 .head::before{
-    content:"";
+    content: "";
     position: absolute;
     width: 350px;
     height: 350px;
@@ -147,7 +147,7 @@ position: absolute;
     margin-left: -52px;
 }
 .lips::after{
-        content: "";
+    content: "";
     position: absolute;
     clip-path: polygon(51% 60%, 31% 0, 73% 0);
     width: 40px;
@@ -171,7 +171,7 @@ position: absolute;
         transform: rotate(-45deg);
 }
 .nose-solid.heart:before {
-    content: '';
+    content: "";
     position: absolute;
     top: -13px;
     left: -1px;
@@ -184,7 +184,7 @@ position: absolute;
     background-color: currentColor;
 }
 .nose-solid.heart:after {
-    content: '';
+    content: "";
     position: absolute;
     top: Opx;
     left: 27px;
@@ -208,7 +208,7 @@ position: absolute;
     background-color: currentColor;
 }
 .mustache-left:before {
-    content: '';
+    content: "";
     position: absolute;
     top: -15px;
     width: 67px;
@@ -217,7 +217,7 @@ position: absolute;
     background-color: currentColor;
 }
 .mustache-left:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 15px;
     width: 67px;
@@ -236,7 +236,7 @@ position: absolute;
     background-color: currentColor;
 }
 .mustache-right:before {
-    content: '';
+    content: "";
     position: absolute;
     top: -15px;
     width: 67px;
@@ -245,7 +245,7 @@ position: absolute;
     background-color: currentColor;
 }
 .mustache-right:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 15px;
     width: 67px;
